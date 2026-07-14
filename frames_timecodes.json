@@ -1,0 +1,28 @@
+{
+  "_comment": "Таймкоди кадрів з відео 'Штучний інтелект за 30 хвилин' (youtube.com/watch?v=o3NXZdTnYYk) для кожного змістового слайда презентації. Використовується скриптом extract_youtube_frames.py. Формат часу: HH:MM:SS або MM:SS.",
+  "video_url": "https://www.youtube.com/watch?v=o3NXZdTnYYk",
+  "frames": {
+    "3":  {"time": "00:10", "file": "slide_03.png", "topic": "ШІ як мислячий агент"},
+    "5":  {"time": "01:05", "file": "slide_05.png", "topic": "Схема штучного нейрона (1943)"},
+    "6":  {"time": "01:38", "file": "slide_06.png", "topic": "Символічний ШІ vs навчання на даних"},
+    "7":  {"time": "02:03", "file": "slide_07.png", "topic": "Зими ШІ"},
+    "8":  {"time": "02:11", "file": "slide_08.png", "topic": "AlexNet / ImageNet 2012"},
+    "9":  {"time": "02:51", "file": "slide_09.png", "topic": "Архітектура Трансформер"},
+    "10": {"time": "03:05", "file": "slide_10.png", "topic": "Гіркий урок Саттона"},
+    "11": {"time": "03:57", "file": "slide_11.png", "topic": "Символічний ШІ в іграх"},
+    "12": {"time": "04:50", "file": "slide_12.png", "topic": "Машинне навчання: котик/не котик"},
+    "14": {"time": "05:44", "file": "slide_14.png", "topic": "Пікселі 280x280"},
+    "15": {"time": "06:46", "file": "slide_15.png", "topic": "Ваги та трафарет нейрона"},
+    "16": {"time": "07:16", "file": "slide_16.png", "topic": "Матриці й тензори"},
+    "17": {"time": "07:47", "file": "slide_17.png", "topic": "Токени та ембединги"},
+    "18": {"time": "08:43", "file": "slide_18.png", "topic": "Приклад 'лук' / контекст"},
+    "21": {"time": "10:40", "file": "slide_21.png", "topic": "Температура моделі"},
+    "22": {"time": "11:31", "file": "slide_22.png", "topic": "Інференс і сервер"},
+    "28": {"time": "18:07", "file": "slide_28.png", "topic": "Галюцинації"},
+    "31": {"time": "19:40", "file": "slide_31.png", "topic": "Дата-центр і GPU"},
+    "32": {"time": "21:06", "file": "slide_32.png", "topic": "GPU / TPU / LPU"},
+    "34": {"time": "24:20", "file": "slide_34.png", "topic": "Кермо і мотор (закрита/відкрита)"},
+    "35": {"time": "25:31", "file": "slide_35.png", "topic": "Драйвери масштабу"},
+    "36": {"time": "27:45", "file": "slide_36.png", "topic": "Моделі світу / Genie"}
+  }
+}
