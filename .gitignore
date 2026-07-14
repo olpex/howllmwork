@@ -1,0 +1,9 @@
+# Generated presentation artifacts
+*.pptx
+presentation_fallback.pptx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
