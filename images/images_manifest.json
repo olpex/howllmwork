@@ -1,0 +1,28 @@
+{
+  "_comment": "Технічні діаграми (Higgsfield · nano_banana_pro · 1792x2400 · 3:4), згенеровані під плейсхолдери презентації. Ключ = номер слайда. Завантажте локально через download_images.py.",
+  "base": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/",
+  "images": {
+    "3":  {"file": "slide_03.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093722_5513994b-4701-4376-b893-d1c55e9d242d.png", "desc": "Інструмент vs Мислячий агент (цикл Дані→Обробка→Рішення→Дія)"},
+    "5":  {"file": "slide_05.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093725_3d84ecea-d810-458b-b385-ef7a7cf8c777.png", "desc": "Схема штучного нейрона + таймлайн 1943/1950/1956"},
+    "6":  {"file": "slide_06.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093730_e58de8a6-d2f1-4653-aac8-dc35d4efc7a4.png", "desc": "Символічний ШІ vs Навчання на даних"},
+    "7":  {"file": "slide_07.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093733_acf8ab2e-f3d2-41e6-8a97-870e4afcfb07.png", "desc": "Хвиля хайп-циклу з «зимами ШІ»"},
+    "8":  {"file": "slide_08.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093737_2c62e454-5c11-4eb7-9295-5c0980335567.png", "desc": "Стовпчикова діаграма помилки: AlexNet 2012"},
+    "9":  {"file": "slide_09.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093740_ef5b392b-6f88-43f3-9e90-b1b0fe584beb.png", "desc": "Блок-схема «Трансформера»"},
+    "10": {"file": "slide_10.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093743_f522bf14-b114-49eb-a7a5-ee7340477290.png", "desc": "Графік: масштабування > ручні правила"},
+    "11": {"file": "slide_11.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093746_bca83e3a-b549-4550-8169-c648067c338d.png", "desc": "Флоучарт «якщо–то» ігрового бота"},
+    "12": {"file": "slide_12.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093802_5bd2d6bb-8ea1-462a-a02d-bc34740579b8.png", "desc": "Цикл навчання (котик/не котик)"},
+    "14": {"file": "slide_14.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093806_be4a0114-9a4f-4926-95fb-9df1d4f0dafa.png", "desc": "Пікселі → ознаки → поріг → котик"},
+    "15": {"file": "slide_15.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093811_56171d40-a79f-41fe-b85b-2f1a98dff586.png", "desc": "Нейрон: входи × ваги + зміщення → активація"},
+    "16": {"file": "slide_16.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093816_275e832b-9acc-4eef-93f2-335397d9f2de.png", "desc": "Матриця та тензор"},
+    "17": {"file": "slide_17.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093821_705c02f3-fa53-4a19-8d94-8ab38f6322ba.png", "desc": "Речення → токени → вектори"},
+    "18": {"file": "slide_18.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093825_fdd6d125-2658-4bd4-a631-6129f573482e.png", "desc": "Контекстне вікно + «лук» (3 значення)"},
+    "21": {"file": "slide_21.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093832_034e8469-4204-4880-afaa-687e9b3691e3.png", "desc": "Розподіл ймовірностей + температура/Top-K/Top-P"},
+    "22": {"file": "slide_22.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093836_d7e18b27-0e14-420b-b251-e7ab5b74790e.png", "desc": "Потік інференсу: Запит→GPU→Відповідь"},
+    "28": {"file": "slide_28.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093854_88eadde1-ecfd-47d4-adce-fe0d22c95fcc.png", "desc": "Причини галюцинацій"},
+    "31": {"file": "slide_31.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093859_99556f58-aa40-491e-a2b0-f2b82dd9d40c.png", "desc": "Компоненти дата-центру (GPU/CPU/RAM/SSD)"},
+    "32": {"file": "slide_32.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093905_37df70f1-b627-471f-81e1-3e909df0614e.png", "desc": "GPU / TPU / LPU"},
+    "34": {"file": "slide_34.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093911_10b0ac8a-3f36-4636-a163-b6be97f4cc6c.png", "desc": "Закрита vs Відкрита модель"},
+    "35": {"file": "slide_35.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093916_113c96b6-c64b-438b-8d19-d0ceb1861c94.png", "desc": "4 драйвери масштабу"},
+    "36": {"file": "slide_36.png", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AOEGps7aC5lAp1IWT530oke2Fs/hf_20260714_093921_db4701a6-b2ac-46cd-ba7b-0b79e110e5fd.png", "desc": "LLM → Моделі світу → AGI"}
+  }
+}

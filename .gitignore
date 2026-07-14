@@ -2,6 +2,12 @@
 *.pptx
 presentation_fallback.pptx
 
+# Downloaded image binaries (fetched locally via download_images.py).
+# Keep the manifest and scripts under version control, not the raw assets.
+images/*.png
+images/*.webp
+images/*.jpg
+
 # Python
 __pycache__/
 *.py[cod]

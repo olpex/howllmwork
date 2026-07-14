@@ -117,6 +117,17 @@ class EducationalPresentationBuilder:
         self.prs.slide_width = Inches(self.SLIDE_W)
         self.prs.slide_height = Inches(self.SLIDE_H)
         self._blank = self.prs.slide_layouts[6]  # порожній макет
+        # {номер_слайда: шлях_до_зображення}; заповнюється у build_presentation.
+        # Якщо файл існує — вбудовується; інакше лишається плейсхолдер.
+        self.image_map: Dict[int, str] = {}
+
+    def _resolve_image(self, image_path: Optional[str], number: Optional[int]) -> Optional[str]:
+        """Повертає явний image_path або підхоплює зображення за номером слайда."""
+        if image_path:
+            return image_path
+        if number is not None:
+            return self.image_map.get(number)
+        return None
 
     # ------------------------------------------------------------------ #
     #  НИЗЬКОРІВНЕВІ ДОПОМІЖНІ МЕТОДИ
@@ -399,7 +410,7 @@ class EducationalPresentationBuilder:
             y += 1.0
         self._bullets(slide, self.TXT_X, y, self.TXT_W, self.VIS_H - (y - (self.HEADER_H + 0.4)),
                       explanation, size=Theme.SZ_BODY - 2)
-        self._visual_panel(slide, image_path, visual_caption)
+        self._visual_panel(slide, self._resolve_image(image_path, number), visual_caption)
         self._footer(slide, source_citation)
         self._add_notes(slide, notes_text, source_citation)
 
@@ -491,7 +502,7 @@ class EducationalPresentationBuilder:
             pass
         self._style_table(gt.table, headers, rows_data)
         if with_visual:
-            self._visual_panel(slide, image_path, visual_caption,
+            self._visual_panel(slide, self._resolve_image(image_path, number), visual_caption,
                                y=self.HEADER_H + 0.5, h=4.6)
         self._footer(slide, source_citation)
         self._add_notes(slide, notes_text, source_citation)
@@ -620,6 +631,23 @@ SRC_VELLUM = "Порівняння галюцинацій і контекстн�
 def build_presentation() -> None:
     """Створює повну презентацію з ≥30 слайдів і зберігає її."""
     b = EducationalPresentationBuilder("Як_працює_штучний_інтелект.pptx")
+
+    # Технічні діаграми під плейсхолдери (Higgsfield · nano_banana_pro · 3:4).
+    # Завантажуються локально скриптом download_images.py у папку images/.
+    # Якщо файл присутній — вбудовується; якщо ні — лишається плейсхолдер.
+    b.image_map = {
+        3:  "images/slide_03.png", 5:  "images/slide_05.png",
+        6:  "images/slide_06.png", 7:  "images/slide_07.png",
+        8:  "images/slide_08.png", 9:  "images/slide_09.png",
+        10: "images/slide_10.png", 11: "images/slide_11.png",
+        12: "images/slide_12.png", 14: "images/slide_14.png",
+        15: "images/slide_15.png", 16: "images/slide_16.png",
+        17: "images/slide_17.png", 18: "images/slide_18.png",
+        21: "images/slide_21.png", 22: "images/slide_22.png",
+        28: "images/slide_28.png", 31: "images/slide_31.png",
+        32: "images/slide_32.png", 34: "images/slide_34.png",
+        35: "images/slide_35.png", 36: "images/slide_36.png",
+    }
 
     # --- 01 · ТИТУЛ ---
     b.add_title_slide(
