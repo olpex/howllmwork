@@ -340,7 +340,8 @@
     .ribbon.soft { background: var(--butter); color: var(--ink); animation: none; }
     @keyframes wiggle { 0%, 80%, 100% { transform: rotate(0); } 85% { transform: rotate(-6deg); } 90% { transform: rotate(5deg); } 95% { transform: rotate(-3deg); } }
     .pricing-note { text-align: center; color: var(--ink-soft); margin-top: 40px; font-size: 15.5px; }
-    .pricing-note span { font-family: var(--hand); font-size: 26px; color: var(--terracotta); }
+    .pricing-note a { font-family: var(--hand); font-size: 26px; color: var(--terracotta); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .pricing-note a:hover { text-decoration-style: wavy; }
 
     /* ───────── FAQ ───────── */
     .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
@@ -412,6 +413,9 @@
     .success.show { opacity: 1; pointer-events: auto; }
     .success .heart { font-size: 72px; display: block; animation: pop .7s cubic-bezier(.2, .9, .3, 1.8); }
     .success h3 { font-size: 42px; margin: 14px 0 10px; }
+    .success > div { display: grid; justify-items: center; gap: 4px; max-width: 100%; }
+    .success .btn { margin-top: 18px; }
+    .req-text { margin: 16px 0 0; padding: 14px 16px; max-width: 100%; max-height: 160px; overflow: auto; border-radius: 14px; background: var(--cream); box-shadow: inset 0 0 0 1.5px var(--line); font: 500 14px/1.5 var(--sans); text-align: left; white-space: pre-wrap; user-select: all; }
     .success p { color: var(--ink-soft); }
     @keyframes pop { from { transform: scale(0) rotate(-30deg); } }
 
@@ -530,7 +534,7 @@
           </p>
           <div class="hero-cta intro" style="--d:.55s">
             <a class="btn" href="#prices">Обрати абонемент <span class="arrow">→</span></a>
-            <a class="btn btn-light" href="#contact">Написати мені</a>
+            <a class="btn btn-light tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Написати мені <span class="arrow">↗</span></a>
           </div>
           <div class="hero-facts intro" style="--d:.7s">
             <div><strong data-count="200">200</strong>балів на НМТ</div>
@@ -751,7 +755,7 @@
           </article>
         </div>
 
-        <p class="pricing-note reveal">Не знаєш, що обрати? <span>Напиши мені, разом вирішимо ♡</span></p>
+        <p class="pricing-note reveal">Не знаєш, що обрати? <a class="tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Напиши мені, разом вирішимо ♡</a></p>
       </div>
     </section>
 
@@ -798,7 +802,7 @@
             <p>Залиш заявку, і я напишу тобі, щоб познайомитися та підібрати зручний розклад.</p>
             <span class="hand">до зустрічі на уроці! ✿</span>
             <div class="socials">
-              <a id="tgLink" href="#" target="_blank" rel="noopener">✈️ Telegram</a>
+              <a id="tgLink" class="tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">✈️ @a_sonchikk</a>
               <a id="igLink" href="#" target="_blank" rel="noopener">📸 Instagram</a>
             </div>
           </div>
@@ -831,13 +835,15 @@
               <textarea name="msg" placeholder="Клас, мета, зручний час для уроків…"></textarea>
             </label>
             <button class="btn btn-accent" type="submit">Надіслати заявку <span class="arrow">→</span></button>
-            <p class="form-note">Натискаючи кнопку, ти погоджуєшся, що я звʼяжуся з тобою за вказаними контактами.</p>
+            <p class="form-note">Після натискання текст заявки скопіюється, і його можна буде надіслати мені в Telegram.</p>
 
             <div class="success" id="success" aria-live="polite">
               <div>
                 <span class="heart">💛</span>
-                <h3>Дякую!</h3>
-                <p>Заявку отримано. Я напишу тобі найближчим часом.</p>
+                <h3>Майже готово!</h3>
+                <p id="successNote">Залишився один крок: надішли заявку мені в Telegram.</p>
+                <pre class="req-text" id="reqText"></pre>
+                <a class="btn btn-accent tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Відкрити Telegram <span class="arrow">↗</span></a>
               </div>
             </div>
           </form>
@@ -859,7 +865,7 @@
   <script>
     /* ── Налаштування контактів: встав свої посилання ── */
     const CONFIG = {
-      telegram: "",   // напр. "sofia_butok" (без @)
+      telegram: "a_sonchikk",   // нік у Telegram (без @)
       instagram: "",  // напр. "sofia.butok"
     };
 
@@ -961,8 +967,14 @@
       }
       const subjects = $$("input[name=subject]:checked", f).map(i => i.value).join(", ") || "—";
       const text = `Нова заявка!\nІмʼя: ${name}\nКонтакт: ${contact}\nПредмет: ${subjects}\nАбонемент: ${el["plan"].value}\nКоментар: ${el["msg"].value.trim() || "—"}`;
-      console.log(text); // TODO: підключити відправку (напр. Telegram-бот або Formspree)
+      $("#reqText").textContent = text;
       $("#success").classList.add("show");
+      const note = $("#successNote");
+      const copied = navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject();
+      copied.then(
+        () => { note.textContent = "Текст заявки скопійовано. Відкрий Telegram і встав його в чат зі мною."; },
+        () => { note.textContent = "Скопіюй текст заявки нижче й надішли його мені в Telegram."; }
+      );
       f.reset();
     });
   </script>
