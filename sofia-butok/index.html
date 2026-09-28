@@ -207,12 +207,21 @@
     @keyframes twinkle { 0%, 100% { transform: scale(.7) rotate(0); opacity: .5; } 50% { transform: scale(1.15) rotate(90deg); opacity: 1; } }
 
     /* ───────── MARQUEE ───────── */
-    .marquee-wrap { overflow: hidden; padding: 24px 0; }
-    .marquee { background: var(--ink); color: var(--cream); padding: 22px 0; overflow: hidden; transform: rotate(-1.5deg); margin: 10px -20px; }
-    .marquee-track { display: flex; width: max-content; animation: scroll 38s linear infinite; }
+    .marquee-wrap { overflow: hidden; padding: 18px 0; }
+    .marquee {
+      --slant: clamp(14px, 2.4vw, 44px);
+      position: relative; isolation: isolate; color: var(--cream); overflow: hidden;
+      padding: calc(22px + var(--slant) / 2) 0;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    .marquee::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; background: var(--ink);
+      clip-path: polygon(0 var(--slant), 100% 0, 100% calc(100% - var(--slant)), 0 100%);
+    }
+    .marquee-track { display: flex; width: max-content; animation: scroll 38s linear infinite; will-change: transform; }
     .marquee-track span { font-family: var(--serif); font-style: italic; font-size: 34px; padding: 0 26px; white-space: nowrap; display: flex; align-items: center; gap: 52px; }
     .marquee-track span::after { content: "✦"; font-style: normal; font-size: 20px; color: var(--ua-yellow); }
-    @keyframes scroll { to { transform: translateX(-50%); } }
+    @keyframes scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 
     /* ───────── ABOUT / MASONRY ───────── */
     .masonry { columns: 3 300px; column-gap: 22px; }
@@ -433,7 +442,7 @@
     .toast.show { transform: translate(-50%, 0); opacity: 1; }
 
     /* ───────── REVEAL ───────── */
-    .js .reveal { transform: translateY(40px) scale(.98); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0s); }
+    .js .reveal { opacity: 0; transform: translateY(40px) scale(.98); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0s); }
     .reveal.in { opacity: 1; transform: none; }
     .step.reveal.in:nth-child(2), .step.reveal.in:nth-child(4) { transform: translateY(26px); }
     .plan.reveal.in:hover { transform: translateY(-10px); }
@@ -495,10 +504,13 @@
       details .answer { padding: 0 22px 22px; }
     }
 
+    /* Режим «менше руху» (напр. вимкнені ефекти анімації у Windows):
+       лишаємо мʼякі анімації, прибираємо лише гойдання, паралакс і обертання */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
       html { scroll-behavior: auto; }
-      .js .reveal { opacity: 1; transform: none; }
+      .blob, .float, .spark, .ribbon, .contact-side .ring { animation: none; }
+      .marquee-track { animation-duration: 70s; }
+      .js .reveal { transform: translateY(16px); }
     }
   </style>
 </head>
@@ -905,7 +917,7 @@
       if (el.dataset.done) return;
       el.dataset.done = 1;
       el.textContent = 0;
-      const target = +el.dataset.count, dur = reduce ? 0 : 1800, start = performance.now();
+      const target = +el.dataset.count, dur = 1800, start = performance.now();
       const step = now => {
         const p = dur ? Math.min((now - start) / dur, 1) : 1;
         el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4)));
