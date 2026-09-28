@@ -169,7 +169,7 @@
       display: grid; place-items: center;
     }
     .portrait .photo .initials { font-family: var(--serif); font-style: italic; font-size: 120px; color: rgba(255, 255, 255, .92); text-shadow: 0 6px 30px rgba(120, 40, 20, .25); }
-    .portrait .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .portrait .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
     .portrait figcaption { font-family: var(--hand); font-size: 30px; text-align: center; margin-top: 10px; line-height: 1; }
     .tape {
       position: absolute; top: -14px; left: 50%; width: 110px; height: 30px; transform: translateX(-50%) rotate(-4deg);
@@ -552,7 +552,7 @@
             <div class="photo">
               <span class="initials">СБ</span>
               <!-- Поклади фото у файл sofia.jpg поруч з index.html — воно автоматично з'явиться тут -->
-              <img src="sofia.jpg" alt="Софія Буток" onerror="this.remove()">
+              <img src="sofia.jpg" alt="Софія Буток" width="960" height="1280" onerror="this.remove()">
             </div>
             <figcaption>Софія ♡</figcaption>
           </figure>
