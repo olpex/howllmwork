@@ -847,15 +847,16 @@
               <textarea name="msg" placeholder="Клас, мета, зручний час для уроків…"></textarea>
             </label>
             <button class="btn btn-accent" type="submit">Надіслати заявку <span class="arrow">→</span></button>
-            <p class="form-note">Після натискання текст заявки скопіюється, і його можна буде надіслати мені в Telegram.</p>
+            <p class="form-note">Після натискання відкриється Telegram з уже готовим повідомленням, залишиться тільки надіслати його.</p>
 
             <div class="success" id="success" aria-live="polite">
               <div>
                 <span class="heart">💛</span>
                 <h3>Майже готово!</h3>
-                <p id="successNote">Залишився один крок: надішли заявку мені в Telegram.</p>
+                <p id="successNote">Залишився один крок: натисни кнопку, і в Telegram відкриється чат зі мною з уже вставленою заявкою. Тобі лише натиснути «Надіслати».</p>
                 <pre class="req-text" id="reqText"></pre>
-                <a class="btn btn-accent tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Відкрити Telegram <span class="arrow">↗</span></a>
+                <a class="btn btn-accent tg-link" id="tgSend" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Відкрити Telegram <span class="arrow">↗</span></a>
+                <p class="form-note" id="copyNote">Якщо текст не вставився сам, він уже скопійований: просто встав його в чат.</p>
               </div>
             </div>
           </form>
@@ -1006,15 +1007,15 @@
         return;
       }
       const subjects = $$("input[name=subject]:checked", f).map(i => i.value).join(", ") || "—";
-      const text = `Нова заявка!\nІмʼя: ${name}\nКонтакт: ${contact}\nПредмет: ${subjects}\nАбонемент: ${el["plan"].value}\nКоментар: ${el["msg"].value.trim() || "—"}`;
+      const text = `Привіт, Софіє! Хочу записатися на уроки 🙂\nІмʼя: ${name}\nКонтакт: ${contact}\nПредмет: ${subjects}\nАбонемент: ${el["plan"].value}\nКоментар: ${el["msg"].value.trim() || "—"}`;
       $("#reqText").textContent = text;
       $("#success").classList.add("show");
-      const note = $("#successNote");
+      // t.me/<нік>?text=… відкриває чат і сам вставляє текст у поле повідомлення
+      $("#tgSend").href = `https://t.me/${CONFIG.telegram}?text=${encodeURIComponent(text)}`;
+      // запасний варіант для старих версій Telegram: текст ще й копіюється
+      const copyNote = $("#copyNote");
       const copied = navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject();
-      copied.then(
-        () => { note.textContent = "Текст заявки скопійовано. Відкрий Telegram і встав його в чат зі мною."; },
-        () => { note.textContent = "Скопіюй текст заявки нижче й надішли його мені в Telegram."; }
-      );
+      copied.catch(() => { copyNote.textContent = "Якщо текст не вставився сам, скопіюй його вище й встав у чат."; });
       f.reset();
     });
   </script>
