@@ -5,7 +5,7 @@
 ## Що налаштувати
 
 - **Фото:** поклади фото у файл `sofia.jpg` поруч з `index.html`, і воно автоматично заміне ініціали «СБ» у головному блоці.
-- **Контакти:** Telegram — `@a_sonchikk` (`CONFIG.telegram` у `<script>`), Instagram — заповни `CONFIG.instagram`.
+- **Контакти:** Telegram — `@a_sonchikk` (`CONFIG.telegram` у `<script>`), Instagram — `@a.sonichka` (`CONFIG.instagram`).
 - **Заявки з форми:** після надсилання текст заявки копіюється, і учень відкриває Telegram @a_sonchikk, щоб надіслати його. Для автоматичних заявок можна підключити Telegram-бота.
 
 ## Абонементи

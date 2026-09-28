@@ -803,7 +803,7 @@
             <span class="hand">до зустрічі на уроці! ✿</span>
             <div class="socials">
               <a id="tgLink" class="tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">✈️ @a_sonchikk</a>
-              <a id="igLink" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+              <a id="igLink" href="https://www.instagram.com/a.sonichka/" target="_blank" rel="noopener">📸 @a.sonichka</a>
             </div>
           </div>
 
@@ -866,7 +866,7 @@
     /* ── Налаштування контактів: встав свої посилання ── */
     const CONFIG = {
       telegram: "a_sonchikk",   // нік у Telegram (без @)
-      instagram: "",  // напр. "sofia.butok"
+      instagram: "a.sonichka",  // нік в Instagram (без @)
     };
 
     const $ = (s, r = document) => r.querySelector(s);
@@ -885,7 +885,7 @@
     }
 
     // socials
-    const socials = { tgLink: CONFIG.telegram && `https://t.me/${CONFIG.telegram}`, igLink: CONFIG.instagram && `https://instagram.com/${CONFIG.instagram}` };
+    const socials = { tgLink: CONFIG.telegram && `https://t.me/${CONFIG.telegram}`, igLink: CONFIG.instagram && `https://www.instagram.com/${CONFIG.instagram}/` };
     Object.entries(socials).forEach(([id, url]) => {
       const a = document.getElementById(id);
       if (url) a.href = url;
