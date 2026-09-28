@@ -218,11 +218,12 @@
       content: ""; position: absolute; inset: 0; z-index: -1; background: var(--ink);
       clip-path: polygon(0 var(--slant), 100% 0, 100% calc(100% - var(--slant)), 0 100%);
     }
-    .marquee-track { display: flex; width: max-content; animation: scroll 38s linear infinite; will-change: transform; }
+    /* текст іде під тим самим кутом, що й смуга; кут точно підганяє скрипт під ширину екрана */
+    .marquee-tilt { transform: rotate(-1.2deg); }
+    .marquee-track { display: flex; width: max-content; text-rendering: geometricPrecision; }
     .marquee-track span { font-family: var(--serif); font-style: italic; font-size: 34px; padding: 0 26px; white-space: nowrap; display: flex; align-items: center; gap: 52px; }
     .marquee-track span::after { content: "✦"; font-style: normal; font-size: 20px; color: var(--ua-yellow); }
-    @keyframes scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
-
+    
     /* ───────── ABOUT / MASONRY ───────── */
     .masonry { columns: 3 300px; column-gap: 22px; }
     .pin {
@@ -509,7 +510,6 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .blob, .float, .spark, .ribbon, .contact-side .ring { animation: none; }
-      .marquee-track { animation-duration: 70s; }
       .js .reveal { transform: translateY(16px); }
     }
   </style>
@@ -592,12 +592,12 @@
     </header>
 
     <!-- ───────── MARQUEE ───────── -->
-    <div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+    <div class="marquee-wrap" aria-hidden="true"><div class="marquee"><div class="marquee-tilt">
       <div class="marquee-track">
         <span>Правопис без болю</span><span>Козацька доба</span><span>Підготовка до НМТ</span><span>Синтаксис і пунктуація</span><span>Українська революція</span><span>Хронологія та персоналії</span><span>Фразеологія</span><span>Київська Русь</span>
         <span>Правопис без болю</span><span>Козацька доба</span><span>Підготовка до НМТ</span><span>Синтаксис і пунктуація</span><span>Українська революція</span><span>Хронологія та персоналії</span><span>Фразеологія</span><span>Київська Русь</span>
       </div>
-    </div></div>
+    </div></div></div>
 
     <!-- ───────── ABOUT ───────── -->
     <section id="about">
@@ -911,6 +911,34 @@
       burger.setAttribute("aria-expanded", open);
     });
     $$(".nav-links a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+    // бігучий рядок: нахил під кут смуги + рух без растрового розмиття
+    (() => {
+      const band = $(".marquee"), tilt = $(".marquee-tilt"), track = $(".marquee-track");
+      const SECONDS = reduce ? 70 : 38; // час одного повного кола
+      let half = 0, x = 0, last = null, visible = true;
+      const fit = () => {
+        const slant = Math.min(44, Math.max(14, innerWidth * 0.024)); // те саме, що --slant у CSS
+        tilt.style.transform = `rotate(${-Math.atan2(slant, band.clientWidth)}rad)`;
+        half = track.scrollWidth / 2;
+      };
+      fit();
+      addEventListener("resize", fit);
+      if (document.fonts) document.fonts.ready.then(fit);
+      new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = null; }).observe(band);
+      const tick = t => {
+        if (visible && half) {
+          if (last !== null) {
+            x -= (half / SECONDS) * Math.min(t - last, 100) / 1000;
+            if (x <= -half) x += half;
+            track.style.marginLeft = x.toFixed(2) + "px";
+          }
+          last = t;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    })();
 
     // count up
     function countUp(el) {
