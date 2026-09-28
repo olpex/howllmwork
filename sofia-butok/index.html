@@ -48,7 +48,8 @@
     }
     img { max-width: 100%; display: block; }
     a { color: inherit; }
-    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.05; margin: 0; letter-spacing: -.01em; }
+    /* міжрядковий інтервал = висота гліфів Cormorant (≈1.22em), інакше виділення сусіднього рядка зрізає хвостики у, д, р */
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.22; margin: 0; letter-spacing: -.01em; }
     p { margin: 0; }
     ::selection { background: var(--butter); }
 
@@ -192,7 +193,7 @@
     .sticker-score small { font-weight: 600; font-size: 13px; opacity: .8; letter-spacing: .06em; text-transform: uppercase; }
     .sticker-note {
       bottom: -6px; left: -18px; width: 210px; background: var(--butter); transform: rotate(-7deg);
-      font-family: var(--hand); font-weight: 500; font-size: 27px; line-height: 1.05; border-radius: 6px 6px 22px 6px; animation-delay: -2s;
+      font-family: var(--hand); font-weight: 500; font-size: 27px; line-height: 1.26; border-radius: 6px 6px 22px 6px; animation-delay: -2s;
     }
     .sticker-sub {
       top: 90px; left: -6px; display: flex; align-items: center; gap: 12px; transform: rotate(-4deg); animation-delay: -3.5s;
@@ -253,9 +254,9 @@
     .pin-score .bar { height: 10px; border-radius: 99px; background: rgba(255, 255, 255, .12); overflow: hidden; margin: 22px 0 16px; }
     .pin-score .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow)); transition: width 2.2s cubic-bezier(.3, .8, .2, 1); }
     .pin-score.counted .bar i { width: 100%; }
-    .pin-quote { font-family: var(--serif); font-size: 29px; line-height: 1.2; font-style: italic; }
+    .pin-quote { font-family: var(--serif); font-size: 29px; line-height: 1.22; font-style: italic; }
     .pin-quote cite { display: block; margin-top: 16px; font-family: var(--hand); font-style: normal; font-size: 26px; color: var(--terracotta); }
-    .pin-hand { font-family: var(--hand); font-size: 32px; line-height: 1.1; }
+    .pin-hand { font-family: var(--hand); font-size: 32px; line-height: 1.26; }
     .ornament {
       height: 26px; margin: -30px -30px 24px; opacity: .9;
       background:
@@ -385,7 +386,7 @@
     }
     .contact-side h2 { font-size: clamp(42px, 5vw, 60px); }
     .contact-side p { margin-top: 18px; opacity: .88; font-size: 18px; max-width: 380px; }
-    .contact-side .hand { font-family: var(--hand); font-size: 34px; margin-top: 30px; display: block; line-height: 1.05; }
+    .contact-side .hand { font-family: var(--hand); font-size: 34px; margin-top: 30px; display: block; line-height: 1.26; }
     .socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; position: relative; z-index: 1; }
     .socials a {
       display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 15px;
