@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js")</script>
+  <title>Софія Буток — репетиторка з української мови та історії України</title>
+  <meta name="description" content="Онлайн-уроки з української мови та історії України з Софією Буток, яка склала НМТ на 200 балів. Абонементи на 8, 16 та 34 уроки.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23D9745B'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='30' text-anchor='middle' fill='%23FBF6EF'%3E%D0%A1%D0%91%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --cream: #fbf6ef;
+      --paper: #fffdf9;
+      --ink: #2b2a33;
+      --ink-soft: #5d5a66;
+      --line: rgba(43, 42, 51, .1);
+      --blush: #f6d9ce;
+      --rose: #eeb8a8;
+      --terracotta: #d9745b;
+      --sage: #d3dcc6;
+      --sage-deep: #7f9670;
+      --butter: #f7e5a6;
+      --sky: #d3e3f1;
+      --lilac: #e3d8ef;
+      --ua-blue: #2f5da8;
+      --ua-yellow: #f2c230;
+      --radius: 28px;
+      --shadow: 0 1px 2px rgba(43, 42, 51, .04), 0 12px 32px -12px rgba(43, 42, 51, .18);
+      --shadow-lg: 0 2px 4px rgba(43, 42, 51, .05), 0 30px 60px -20px rgba(43, 42, 51, .28);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --hand: "Caveat", "Comic Sans MS", cursive;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: clip;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    /* міжрядковий інтервал = висота гліфів Cormorant (≈1.22em), інакше виділення сусіднього рядка зрізає хвостики у, д, р */
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.22; margin: 0; letter-spacing: -.01em; }
+    p { margin: 0; }
+    ::selection { background: var(--butter); }
+
+    /* paper grain */
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .35;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+    section { padding: 110px 0; position: relative; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--terracotta);
+    }
+    .eyebrow::before { content: "✦"; font-size: 12px; }
+    .section-head { max-width: 680px; margin-bottom: 56px; }
+    .section-head h2 { font-size: clamp(40px, 6vw, 68px); margin-top: 14px; }
+    .section-head h2 em { font-style: italic; color: var(--terracotta); }
+    .section-head p { margin-top: 18px; color: var(--ink-soft); font-size: 18px; }
+    .center { text-align: center; margin-inline: auto; }
+
+    .btn {
+      --bg: var(--ink); --fg: var(--cream);
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 16px 28px; border-radius: 999px; border: 0; cursor: pointer;
+      font: 700 16px/1 var(--sans); text-decoration: none;
+      background: var(--bg); color: var(--fg);
+      transition: transform .35s cubic-bezier(.2, .9, .3, 1.4), box-shadow .3s, background .3s;
+      box-shadow: 0 10px 24px -10px rgba(43, 42, 51, .45);
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 30px -12px rgba(43, 42, 51, .5); }
+    .btn:active { transform: translateY(0) scale(.98); }
+    .btn .arrow { transition: transform .3s; }
+    .btn:hover .arrow { transform: translateX(4px); }
+    .btn-light { --bg: var(--paper); --fg: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line), 0 6px 16px -10px rgba(43, 42, 51, .3); }
+    .btn-accent { --bg: var(--terracotta); --fg: #fff; }
+
+    /* ───────── NAV ───────── */
+    .nav {
+      position: fixed; top: calc(14px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%); z-index: 50;
+      width: min(1180px, 100% - 24px);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 10px 10px 22px; border-radius: 999px;
+      background: rgba(255, 253, 249, .72); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6), 0 10px 30px -18px rgba(43, 42, 51, .35);
+      transition: top .3s;
+    }
+    .logo { font-family: var(--serif); font-size: 26px; font-weight: 700; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+    .logo span { color: var(--terracotta); font-style: italic; }
+    .nav-links { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a {
+      display: block; padding: 9px 16px; border-radius: 999px; text-decoration: none;
+      font-size: 15px; font-weight: 600; color: var(--ink-soft); transition: background .25s, color .25s;
+    }
+    .nav-links a:hover { background: var(--blush); color: var(--ink); }
+    .only-mobile { display: none; }
+    .nav .btn { padding: 13px 22px; font-size: 15px; }
+    .burger { display: none; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--ink); cursor: pointer; position: relative; }
+    .burger span, .burger span::before, .burger span::after {
+      position: absolute; left: 50%; top: 50%; width: 18px; height: 2px; background: var(--cream); border-radius: 2px;
+      transform: translate(-50%, -50%); transition: transform .3s, background .3s;
+    }
+    .burger span::before, .burger span::after { content: ""; }
+    .burger span::before { transform: translate(-50%, -7px); }
+    .burger span::after { transform: translate(-50%, 5px); }
+    .nav.open .burger span { background: transparent; }
+    .nav.open .burger span::before { transform: translate(-50%, -1px) rotate(45deg); }
+    .nav.open .burger span::after { transform: translate(-50%, -1px) rotate(-45deg); }
+
+    /* ───────── HERO ───────── */
+    .hero { padding: 150px 0 80px; min-height: 100vh; display: flex; align-items: center; position: relative; isolation: isolate; }
+    .blobs { position: absolute; top: 0; left: 0; right: 0; bottom: -200px; overflow: hidden; z-index: -1; pointer-events: none; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .7; animation: drift 18s ease-in-out infinite alternate; }
+    .blob.b1 { width: 460px; height: 460px; background: var(--blush); top: 60px; right: -120px; }
+    .blob.b2 { width: 380px; height: 380px; background: var(--sky); bottom: 140px; left: -140px; animation-delay: -6s; }
+    .blob.b3 { width: 280px; height: 280px; background: var(--butter); top: 38%; left: 38%; opacity: .45; animation-delay: -12s; }
+    @keyframes drift { to { transform: translate(40px, -30px) scale(1.12); } }
+
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 16px 8px 8px; border-radius: 999px; background: var(--paper); box-shadow: var(--shadow);
+      font-size: 14px; font-weight: 600;
+    }
+    .chip .flag { width: 26px; height: 26px; border-radius: 50%; overflow: hidden; display: grid; grid-template-rows: 1fr 1fr; flex: none; }
+    .chip .flag i:first-child { background: var(--ua-blue); }
+    .chip .flag i:last-child { background: var(--ua-yellow); }
+    .hero h1 { font-size: clamp(46px, 6.4vw, 88px); margin: 26px 0 24px; }
+    .hero h1 em { font-style: italic; color: var(--terracotta); position: relative; white-space: nowrap; }
+    .hero h1 em svg { position: absolute; left: -2%; bottom: -8px; width: 104%; height: 18px; overflow: visible; }
+    .hero h1 em path { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 1.4s .9s cubic-bezier(.6, 0, .2, 1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .hero-lead { font-size: 19px; color: var(--ink-soft); max-width: 520px; }
+    .hero-lead b { color: var(--ink); }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .hero-facts { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 44px; padding-top: 28px; border-top: 1px dashed var(--line); }
+    .hero-facts div { font-size: 14px; color: var(--ink-soft); line-height: 1.35; }
+    .hero-facts strong { display: block; font-family: var(--serif); font-size: 40px; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+
+    /* collage */
+    .collage { position: relative; height: 600px; }
+    .polaroid {
+      position: absolute; background: var(--paper); padding: 14px 14px 18px; border-radius: 22px; box-shadow: var(--shadow-lg);
+      transition: transform .6s cubic-bezier(.2, .9, .3, 1.2);
+    }
+    .portrait {
+      width: 330px; height: 410px; left: 50%; top: 50%; margin: -235px 0 0 -175px; transform: rotate(-3deg);
+      z-index: 2;
+    }
+    .portrait .photo {
+      position: relative; width: 100%; height: 340px; border-radius: 14px; overflow: hidden;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, .7), transparent 45%),
+        linear-gradient(155deg, var(--blush), var(--rose) 55%, var(--terracotta));
+      display: grid; place-items: center;
+    }
+    .portrait .photo .initials { font-family: var(--serif); font-style: italic; font-size: 120px; color: rgba(255, 255, 255, .92); text-shadow: 0 6px 30px rgba(120, 40, 20, .25); }
+    .portrait .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+    .portrait figcaption { font-family: var(--hand); font-size: 30px; text-align: center; margin-top: 10px; line-height: 1; }
+    .tape {
+      position: absolute; top: -14px; left: 50%; width: 110px; height: 30px; transform: translateX(-50%) rotate(-4deg);
+      background: rgba(247, 229, 166, .78); box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+      clip-path: polygon(3% 0, 97% 4%, 100% 50%, 96% 100%, 2% 96%, 0 50%);
+    }
+
+    .float { animation: bob 6s ease-in-out infinite; }
+    @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+
+    .sticker {
+      position: absolute; z-index: 3; border-radius: 24px; padding: 16px 20px; box-shadow: var(--shadow-lg);
+      background: var(--paper); font-weight: 700; font-size: 15px; line-height: 1.3;
+    }
+    .sticker-score {
+      top: 10px; right: 0; background: var(--ink); color: var(--cream); padding: 18px 22px; transform: rotate(6deg);
+      text-align: center; border-radius: 26px;
+    }
+    .sticker-score .num { font-family: var(--serif); font-size: 64px; line-height: .9; display: block; color: var(--ua-yellow); }
+    .sticker-score small { font-weight: 600; font-size: 13px; opacity: .8; letter-spacing: .06em; text-transform: uppercase; }
+    .sticker-note {
+      bottom: -6px; left: -18px; width: 210px; background: var(--butter); transform: rotate(-7deg);
+      font-family: var(--hand); font-weight: 500; font-size: 27px; line-height: 1.26; border-radius: 6px 6px 22px 6px; animation-delay: -2s;
+    }
+    .sticker-sub {
+      top: 90px; left: -6px; display: flex; align-items: center; gap: 12px; transform: rotate(-4deg); animation-delay: -3.5s;
+    }
+    .sticker-sub .ico { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; background: var(--sky); }
+    .sticker-live {
+      bottom: 70px; right: 6px; display: flex; align-items: center; gap: 10px; background: var(--sage); transform: rotate(4deg); animation-delay: -1s;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #3fa35b; box-shadow: 0 0 0 0 rgba(63, 163, 91, .6); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 12px rgba(63, 163, 91, 0); } 100% { box-shadow: 0 0 0 0 rgba(63, 163, 91, 0); } }
+    .spark { position: absolute; font-size: 28px; color: var(--terracotta); animation: twinkle 3s ease-in-out infinite; z-index: 3; }
+    @keyframes twinkle { 0%, 100% { transform: scale(.7) rotate(0); opacity: .5; } 50% { transform: scale(1.15) rotate(90deg); opacity: 1; } }
+
+    /* ───────── MARQUEE ───────── */
+    .marquee-wrap { overflow: hidden; padding: 18px 0; }
+    .marquee {
+      --slant: clamp(14px, 2.4vw, 44px);
+      position: relative; isolation: isolate; color: var(--cream); overflow: hidden;
+      padding: calc(22px + var(--slant) / 2) 0;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    .marquee::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; background: var(--ink);
+      clip-path: polygon(0 var(--slant), 100% 0, 100% calc(100% - var(--slant)), 0 100%);
+    }
+    /* текст іде під тим самим кутом, що й смуга; кут точно підганяє скрипт під ширину екрана */
+    .marquee-tilt { transform: rotate(-1.2deg); }
+    .marquee-track { display: flex; width: max-content; text-rendering: geometricPrecision; }
+    .marquee-track span { font-family: var(--serif); font-style: italic; font-size: 34px; padding: 0 26px; white-space: nowrap; display: flex; align-items: center; gap: 52px; }
+    .marquee-track span::after { content: "✦"; font-style: normal; font-size: 20px; color: var(--ua-yellow); }
+    
+    /* ───────── ABOUT / MASONRY ───────── */
+    .masonry { columns: 3 300px; column-gap: 22px; }
+    .pin {
+      break-inside: avoid; margin-bottom: 22px; border-radius: var(--radius); padding: 30px; background: var(--paper);
+      box-shadow: var(--shadow); position: relative; overflow: hidden;
+      transition: transform .5s cubic-bezier(.2, .9, .3, 1.3), box-shadow .4s;
+      transform-style: preserve-3d; will-change: transform;
+    }
+    .pin:hover { box-shadow: var(--shadow-lg); }
+    .pin h3 { font-size: 30px; margin-bottom: 10px; }
+    .pin p { color: var(--ink-soft); }
+    .pin .emoji {
+      width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; font-size: 28px;
+      background: rgba(255, 255, 255, .6); margin-bottom: 20px; transition: transform .5s cubic-bezier(.2, .9, .3, 1.6);
+    }
+    .pin:hover .emoji { transform: rotate(-10deg) scale(1.12); }
+    .pin.blush { background: var(--blush); }
+    .pin.sage { background: var(--sage); }
+    .pin.butter { background: var(--butter); }
+    .pin.sky { background: var(--sky); }
+    .pin.lilac { background: var(--lilac); }
+    .pin.dark { background: var(--ink); color: var(--cream); }
+    .pin.dark p { color: rgba(251, 246, 239, .72); }
+    .pin-score { text-align: center; padding: 44px 30px; }
+    .pin-score .big { font-family: var(--serif); font-size: clamp(110px, 14vw, 150px); line-height: .85; color: var(--ua-yellow); font-weight: 700; display: block; }
+    .pin-score .of { font-family: var(--hand); font-size: 30px; color: var(--cream); display: block; margin: 8px 0 14px; }
+    .pin-score .bar { height: 10px; border-radius: 99px; background: rgba(255, 255, 255, .12); overflow: hidden; margin: 22px 0 16px; }
+    .pin-score .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow)); transition: width 2.2s cubic-bezier(.3, .8, .2, 1); }
+    .pin-score.counted .bar i { width: 100%; }
+    .pin-quote { font-family: var(--serif); font-size: 29px; line-height: 1.22; font-style: italic; }
+    .pin-quote cite { display: block; margin-top: 16px; font-family: var(--hand); font-style: normal; font-size: 26px; color: var(--terracotta); }
+    .pin-hand { font-family: var(--hand); font-size: 32px; line-height: 1.26; }
+    .ornament {
+      height: 26px; margin: -30px -30px 24px; opacity: .9;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 8px, var(--terracotta) 8px 10px, transparent 10px 18px),
+        repeating-linear-gradient(-45deg, transparent 0 8px, var(--ink) 8px 10px, transparent 10px 18px);
+      -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+              mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tags span { padding: 7px 14px; border-radius: 999px; background: rgba(255, 255, 255, .65); font-size: 14px; font-weight: 600; }
+
+    /* ───────── SUBJECTS ───────── */
+    .subjects { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .subject {
+      border-radius: 36px; padding: 44px; position: relative; overflow: hidden; min-height: 540px;
+      display: flex; flex-direction: column; box-shadow: var(--shadow);
+    }
+    .subject.lang { background: linear-gradient(160deg, #fdeae3, var(--blush)); }
+    .subject.hist { background: linear-gradient(160deg, #e9eef8, var(--sky)); }
+    .subject .num { font-family: var(--hand); font-size: 30px; color: var(--terracotta); }
+    .subject.hist .num { color: var(--ua-blue); }
+    .subject h3 { font-size: clamp(40px, 5vw, 56px); margin: 6px 0 16px; }
+    .subject > p { color: var(--ink-soft); max-width: 420px; }
+    .subject .big-letter {
+      position: absolute; right: -10px; bottom: -70px; font-family: var(--serif); font-style: italic; font-weight: 700;
+      font-size: 320px; line-height: 1; color: rgba(255, 255, 255, .55); pointer-events: none; transition: transform 1s cubic-bezier(.2, .9, .3, 1);
+    }
+    .subject:hover .big-letter { transform: rotate(-8deg) translateY(-12px); }
+    .topics { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
+    .topics li {
+      padding: 10px 16px; border-radius: 16px; background: rgba(255, 255, 255, .78); font-size: 15px; font-weight: 600;
+      box-shadow: 0 4px 12px -8px rgba(43, 42, 51, .3);
+      transition: transform .35s cubic-bezier(.2, .9, .3, 1.6), background .3s;
+    }
+    .topics li:hover { transform: translateY(-4px) rotate(-2deg); background: #fff; }
+
+    /* ───────── STEPS ───────── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+    .step { background: var(--paper); border-radius: var(--radius); padding: 30px 26px; box-shadow: var(--shadow); position: relative; }
+    .step::before {
+      counter-increment: s; content: "0" counter(s);
+      font-family: var(--serif); font-style: italic; font-size: 54px; line-height: 1; color: var(--rose); display: block; margin-bottom: 18px;
+    }
+    .step h3 { font-size: 26px; margin-bottom: 8px; }
+    .step p { color: var(--ink-soft); font-size: 15.5px; }
+    .step:nth-child(2) { transform: translateY(26px); }
+    .step:nth-child(4) { transform: translateY(26px); }
+
+    /* ───────── PRICING ───────── */
+    .pricing { background: var(--paper); border-radius: 56px; margin: 0 12px; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .plan {
+      position: relative; border-radius: 34px; padding: 38px 32px 34px; background: var(--cream);
+      display: flex; flex-direction: column; box-shadow: inset 0 0 0 1.5px var(--line);
+      transition: transform .5s cubic-bezier(.2, .9, .3, 1.3), box-shadow .4s;
+    }
+    .plan:hover { transform: translateY(-10px); box-shadow: inset 0 0 0 1.5px var(--line), var(--shadow-lg); }
+    .plan .badge-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 34px; }
+    .plan .emoji { font-size: 34px; display: inline-block; transition: transform .6s cubic-bezier(.2, .9, .3, 1.6); }
+    .plan:hover .emoji { transform: rotate(14deg) scale(1.2); }
+    .plan h3 { font-size: 36px; margin: 18px 0 4px; }
+    .plan .lessons { color: var(--ink-soft); font-weight: 600; }
+    .price { display: flex; align-items: baseline; gap: 8px; margin: 26px 0 6px; }
+    .price b { font-family: var(--serif); font-size: 68px; line-height: 1; font-weight: 700; letter-spacing: -.02em; }
+    .price span { font-size: 22px; font-weight: 700; }
+    .per { font-size: 15px; color: var(--ink-soft); }
+    .save { align-self: flex-start; display: inline-block; margin-top: 10px; padding: 6px 12px; border-radius: 999px; background: var(--sage); font-size: 13.5px; font-weight: 700; color: #3f5634; }
+    .plan ul { list-style: none; padding: 0; margin: 26px 0 32px; display: grid; gap: 12px; flex: 1; align-content: start; }
+    .plan li { display: flex; gap: 12px; font-size: 15.5px; line-height: 1.45; }
+    .plan li::before {
+      content: "✓"; flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--blush); color: var(--terracotta); font-size: 12px; font-weight: 800; margin-top: 1px;
+    }
+    .plan .btn { width: 100%; }
+
+    .plan.popular { background: var(--ink); color: var(--cream); box-shadow: var(--shadow-lg); transform: scale(1.04); z-index: 1; }
+    .plan.popular:hover { transform: scale(1.04) translateY(-10px); }
+    .plan.popular .lessons, .plan.popular .per { color: rgba(251, 246, 239, .7); }
+    .plan.popular li::before { background: rgba(242, 194, 48, .18); color: var(--ua-yellow); }
+    .plan.popular .btn { --bg: var(--ua-yellow); --fg: var(--ink); }
+    .plan.popular .save { background: rgba(211, 220, 198, .2); color: var(--sage); }
+    .plan.popular::after {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+      background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .12) 45%, transparent 60%);
+      background-size: 250% 100%; animation: shine 4.5s ease-in-out infinite;
+    }
+    @keyframes shine { 0% { background-position: 130% 0; } 60%, 100% { background-position: -130% 0; } }
+    .ribbon {
+      padding: 7px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+      background: var(--terracotta); color: #fff; animation: wiggle 3.5s ease-in-out infinite;
+    }
+    .ribbon.soft { background: var(--butter); color: var(--ink); animation: none; }
+    @keyframes wiggle { 0%, 80%, 100% { transform: rotate(0); } 85% { transform: rotate(-6deg); } 90% { transform: rotate(5deg); } 95% { transform: rotate(-3deg); } }
+    .pricing-note { text-align: center; color: var(--ink-soft); margin-top: 40px; font-size: 15.5px; }
+    .pricing-note a { font-family: var(--hand); font-size: 26px; color: var(--terracotta); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .pricing-note a:hover { text-decoration-style: wavy; }
+
+    /* ───────── FAQ ───────── */
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
+    .faq-grid .section-head { position: sticky; top: 120px; }
+    details {
+      background: var(--paper); border-radius: 24px; margin-bottom: 14px; box-shadow: var(--shadow);
+      transition: background .3s;
+    }
+    details[open] { background: #fff; }
+    summary {
+      list-style: none; cursor: pointer; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      font-weight: 700; font-size: 18px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary .pm {
+      flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--blush); position: relative; transition: transform .4s cubic-bezier(.2, .9, .3, 1.5), background .3s;
+    }
+    summary .pm::before, summary .pm::after { content: ""; position: absolute; left: 50%; top: 50%; width: 14px; height: 2px; background: var(--ink); border-radius: 2px; transform: translate(-50%, -50%); }
+    summary .pm::after { transform: translate(-50%, -50%) rotate(90deg); }
+    details[open] summary .pm { transform: rotate(135deg); background: var(--butter); }
+    details .answer { padding: 0 28px 26px; color: var(--ink-soft); animation: fadeDown .4s ease; }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-8px); } }
+
+    /* ───────── CONTACT ───────── */
+    .contact-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 44px; overflow: hidden; box-shadow: var(--shadow-lg);
+      background: var(--paper);
+    }
+    .contact-side {
+      padding: 56px 48px; background: linear-gradient(160deg, var(--terracotta), #c65a43); color: #fff; position: relative; overflow: hidden;
+    }
+    .contact-side h2 { font-size: clamp(42px, 5vw, 60px); }
+    .contact-side p { margin-top: 18px; opacity: .88; font-size: 18px; max-width: 380px; }
+    .contact-side .hand { font-family: var(--hand); font-size: 34px; margin-top: 30px; display: block; line-height: 1.26; }
+    .socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; position: relative; z-index: 1; }
+    .socials a {
+      display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 15px;
+      background: rgba(255, 255, 255, .16); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .3); transition: background .3s, transform .3s;
+    }
+    .socials a:hover { background: rgba(255, 255, 255, .28); transform: translateY(-2px); }
+    .contact-side .ring { position: absolute; border-radius: 50%; border: 2px dashed rgba(255, 255, 255, .25); animation: spin 40s linear infinite; }
+    .contact-side .ring.r1 { width: 380px; height: 380px; right: -150px; bottom: -150px; }
+    .contact-side .ring.r2 { width: 220px; height: 220px; right: -70px; bottom: -70px; animation-direction: reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    form { padding: 56px 48px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: start; position: relative; }
+    label { display: grid; gap: 8px; font-size: 14px; font-weight: 700; min-width: 0; }
+    input, select, textarea {
+      width: 100%; font: 500 16px/1.4 var(--sans); color: var(--ink); padding: 15px 18px; border-radius: 16px; border: 0;
+      background: var(--cream); box-shadow: inset 0 0 0 1.5px var(--line); transition: box-shadow .25s, background .25s; appearance: none;
+    }
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232b2a33' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px; }
+    textarea { resize: vertical; min-height: 110px; }
+    input:focus, select:focus, textarea:focus { outline: none; background: #fff; box-shadow: inset 0 0 0 2px var(--terracotta), 0 0 0 5px rgba(217, 116, 91, .15); }
+    .form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+    .subj-pick { display: flex; flex-wrap: wrap; gap: 10px; }
+    .subj-pick input { position: absolute; opacity: 0; pointer-events: none; }
+    .subj-pick span {
+      display: inline-block; padding: 11px 18px; border-radius: 999px; background: var(--cream); box-shadow: inset 0 0 0 1.5px var(--line);
+      font-weight: 600; font-size: 15px; cursor: pointer; transition: background .25s, box-shadow .25s, transform .3s cubic-bezier(.2, .9, .3, 1.6);
+    }
+    .subj-pick input:checked + span { background: var(--ink); color: var(--cream); box-shadow: none; transform: scale(1.04); }
+    .subj-pick input:focus-visible + span { box-shadow: 0 0 0 3px var(--terracotta); }
+    .form-note { font-size: 13px; color: var(--ink-soft); }
+    .success {
+      position: absolute; inset: 0; background: var(--paper); display: grid; place-items: center; text-align: center; padding: 40px;
+      opacity: 0; pointer-events: none; transition: opacity .4s;
+    }
+    .success.show { opacity: 1; pointer-events: auto; }
+    .success .heart { font-size: 72px; display: block; animation: pop .7s cubic-bezier(.2, .9, .3, 1.8); }
+    .success h3 { font-size: 42px; margin: 14px 0 10px; }
+    .success > div { display: grid; justify-items: center; gap: 4px; max-width: 100%; }
+    .success .btn { margin-top: 18px; }
+    .req-text { margin: 16px 0 0; padding: 14px 16px; max-width: 100%; max-height: 160px; overflow: auto; border-radius: 14px; background: var(--cream); box-shadow: inset 0 0 0 1.5px var(--line); font: 500 14px/1.5 var(--sans); text-align: left; white-space: pre-wrap; user-select: all; }
+    .success p { color: var(--ink-soft); }
+    @keyframes pop { from { transform: scale(0) rotate(-30deg); } }
+
+    footer { padding: 50px 0 40px; }
+    .foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; color: var(--ink-soft); font-size: 15px; }
+    .foot .logo { color: var(--ink); }
+
+    /* toast */
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, calc(100% + 40px)); z-index: 60;
+      background: var(--ink); color: var(--cream); padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
+      box-shadow: var(--shadow-lg); transition: transform .5s cubic-bezier(.2, .9, .3, 1.3), opacity .3s; max-width: calc(100% - 32px); text-align: center;
+      opacity: 0; pointer-events: none;
+    }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+    /* ───────── REVEAL ───────── */
+    .js .reveal { opacity: 0; transform: translateY(40px) scale(.98); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0s); }
+    .reveal.in { opacity: 1; transform: none; }
+    .step.reveal.in:nth-child(2), .step.reveal.in:nth-child(4) { transform: translateY(26px); }
+    .plan.reveal.in:hover { transform: translateY(-10px); }
+    .plan.popular.reveal.in { transform: scale(1.04); }
+    .plan.popular.reveal.in:hover { transform: scale(1.04) translateY(-10px); }
+
+    .hero .intro { opacity: 0; transform: translateY(30px); animation: rise 1s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: var(--d, 0s); }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    .collage .pop-in { opacity: 0; scale: .6; animation: popIn .9s cubic-bezier(.2, .9, .3, 1.4) forwards; animation-delay: var(--d, 0s); }
+    @keyframes popIn { to { opacity: 1; scale: 1; } }
+
+    /* ───────── RESPONSIVE ───────── */
+    @media (max-width: 1020px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .collage { height: 560px; max-width: 520px; width: 100%; margin-inline: auto; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .plans { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+      .plan.popular, .plan.popular.reveal.in { transform: none; }
+      .plan.popular:hover, .plan.popular.reveal.in:hover { transform: translateY(-10px); }
+      .faq-grid { grid-template-columns: 1fr; gap: 10px; }
+      .faq-grid .section-head { position: static; }
+      .contact-card { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 860px) {
+      .nav-links, .nav > .btn { display: none; }
+      .burger { display: block; }
+      .nav.open { border-radius: 30px; flex-wrap: wrap; padding-bottom: 16px; }
+      .nav.open .nav-links { display: flex; flex-direction: column; width: 100%; order: 3; }
+      .nav.open .nav-links a { font-size: 18px; padding: 12px 14px; }
+      .only-mobile { display: block; }
+      .subjects { grid-template-columns: 1fr; }
+      .subject { min-height: 0; padding: 34px 28px 44px; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      section { padding: 80px 0; }
+      .hero { padding-top: 120px; }
+      .collage { height: 500px; }
+      .portrait { width: 260px; height: 330px; margin: -180px 0 0 -130px; }
+      .portrait .photo { height: 262px; }
+      .portrait .photo .initials { font-size: 96px; }
+      .sticker-score .num { font-size: 50px; }
+      .sticker { padding: 12px 14px; }
+      .sticker-note { width: 150px; font-size: 21px; bottom: 0; left: 0; }
+      .sticker-sub { top: 20px; left: 0; font-size: 13px; }
+      .sticker-sub .ico { width: 34px; height: 34px; font-size: 18px; border-radius: 11px; }
+      .sticker-live { bottom: 18px; right: 0; font-size: 13px; }
+      .hero-facts { gap: 20px; }
+      .hero-facts strong { font-size: 34px; }
+      .steps { grid-template-columns: 1fr; }
+      .step:nth-child(2), .step:nth-child(4), .step.reveal.in:nth-child(2), .step.reveal.in:nth-child(4) { transform: none; }
+      .pricing { border-radius: 36px; margin: 0 8px; }
+      .plan { padding: 32px 24px 28px; }
+      .price b { font-size: 58px; }
+      .contact-side, form { padding: 40px 24px; }
+      .form-row { grid-template-columns: minmax(0, 1fr); }
+      .marquee-track span { font-size: 26px; }
+      summary { padding: 20px 22px; font-size: 16.5px; }
+      details .answer { padding: 0 22px 22px; }
+    }
+
+    /* Режим «менше руху» (напр. вимкнені ефекти анімації у Windows):
+       лишаємо мʼякі анімації, прибираємо лише гойдання, паралакс і обертання */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .blob, .float, .spark, .ribbon, .contact-side .ring { animation: none; }
+      .js .reveal { transform: translateY(16px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ───────── NAV ───────── -->
+  <nav class="nav" id="nav">
+    <a class="logo" href="#top">Софія <span>Буток</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Про мене</a></li>
+      <li><a href="#subjects">Предмети</a></li>
+      <li><a href="#prices">Абонементи</a></li>
+      <li><a href="#faq">Питання</a></li>
+      <li class="only-mobile"><a href="#contact">Записатися</a></li>
+    </ul>
+    <a class="btn btn-accent" href="#contact">Записатися <span class="arrow">→</span></a>
+    <button type="button" class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
+  </nav>
+
+  <main id="top">
+    <!-- ───────── HERO ───────── -->
+    <header class="hero">
+      <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="chip intro" style="--d:.1s"><span class="flag"><i></i><i></i></span> Онлайн-репетиторка · українська мова та історія України</div>
+          <h1 class="intro" style="--d:.25s">
+            Готуйся до НМТ з тією, хто склала його на
+            <em>200 балів<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12 C 60 2, 120 16, 180 7 S 270 4, 297 10" fill="none" stroke="#f2c230" stroke-width="6" stroke-linecap="round"/></svg></em>
+          </h1>
+          <p class="hero-lead intro" style="--d:.4s">
+            Привіт! Я <b>Софія Буток</b>. Допомагаю полюбити українську мову та історію України, розібратися в правилах і датах без зубріння та впевнено скласти НМТ.
+          </p>
+          <div class="hero-cta intro" style="--d:.55s">
+            <a class="btn" href="#prices">Обрати абонемент <span class="arrow">→</span></a>
+            <a class="btn btn-light tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Написати мені <span class="arrow">↗</span></a>
+          </div>
+          <div class="hero-facts intro" style="--d:.7s">
+            <div><strong data-count="200">200</strong>балів на НМТ</div>
+            <div><strong>2</strong>предмети:<br>мова та історія</div>
+            <div><strong>100%</strong>онлайн, з будь-<br>якого куточка світу</div>
+          </div>
+        </div>
+
+        <div class="collage" id="collage">
+          <span class="spark" style="top:4%;left:22%">✦</span>
+          <span class="spark" style="bottom:18%;right:34%;animation-delay:-1.5s;font-size:20px;color:var(--ua-blue)">✦</span>
+
+          <figure class="polaroid portrait pop-in" style="--d:.3s" data-depth="12">
+            <div class="tape"></div>
+            <div class="photo">
+              <span class="initials">СБ</span>
+              <!-- Поклади фото у файл sofia.jpg поруч з index.html — воно автоматично з'явиться тут -->
+              <img src="sofia.jpg" alt="Софія Буток" width="960" height="1280" onerror="this.remove()">
+            </div>
+            <figcaption>Софія ♡</figcaption>
+          </figure>
+
+          <div class="sticker sticker-score pop-in" style="--d:.7s" data-depth="30">
+            <div class="float" style="animation-delay:-1s">
+              <span class="num">200</span>
+              <small>балів НМТ</small>
+            </div>
+          </div>
+
+          <div class="sticker sticker-sub pop-in" style="--d:.85s" data-depth="24">
+            <span class="ico">📖</span> Українська мова<br>та історія України
+          </div>
+
+          <div class="sticker sticker-live pop-in" style="--d:1s" data-depth="20">
+            <span class="dot"></span> Набір учнів відкрито
+          </div>
+
+          <div class="sticker sticker-note pop-in" style="--d:1.15s" data-depth="36">
+            пояснюю так, що запамʼятовується назавжди ✿
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ───────── MARQUEE ───────── -->
+    <div class="marquee-wrap" aria-hidden="true"><div class="marquee"><div class="marquee-tilt">
+      <div class="marquee-track">
+        <span>Правопис без болю</span><span>Козацька доба</span><span>Підготовка до НМТ</span><span>Синтаксис і пунктуація</span><span>Українська революція</span><span>Хронологія та персоналії</span><span>Фразеологія</span><span>Київська Русь</span>
+        <span>Правопис без болю</span><span>Козацька доба</span><span>Підготовка до НМТ</span><span>Синтаксис і пунктуація</span><span>Українська революція</span><span>Хронологія та персоналії</span><span>Фразеологія</span><span>Київська Русь</span>
+      </div>
+    </div></div></div>
+
+    <!-- ───────── ABOUT ───────── -->
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Про мене</span>
+          <h2>Вчитися може бути <em>легко</em> і навіть приємно</h2>
+          <p>Я сама нещодавно пройшла весь шлях підготовки до НМТ, тому знаю, що справді працює, а що лише забирає час.</p>
+        </div>
+
+        <div class="masonry">
+          <article class="pin dark pin-score reveal tilt" id="scorePin">
+            <span class="big" data-count="200">200</span>
+            <span class="of">з 200 можливих</span>
+            <div class="bar"><i></i></div>
+            <p>Мій результат НМТ. Тепер допомагаю учням наблизитися до нього.</p>
+          </article>
+
+          <article class="pin blush reveal tilt" style="--d:.1s">
+            <div class="emoji">🧠</div>
+            <h3>Розумію логіку тестів</h3>
+            <p>Покажу типові пастки в завданнях і навчу помічати їх ще до того, як обереш відповідь.</p>
+          </article>
+
+          <article class="pin sage reveal tilt" style="--d:.2s">
+            <div class="ornament"></div>
+            <p class="pin-quote">«Нації вмирають не від інфаркту. Спочатку їм відбирає мову.»<cite>— Ліна Костенко</cite></p>
+          </article>
+
+          <article class="pin sky reveal tilt" style="--d:.1s">
+            <div class="emoji">🗺️</div>
+            <h3>Історія як серіал</h3>
+            <p>Події, дати й постаті складаються в живу історію з причинами та наслідками, тож їх не треба зубрити.</p>
+            <div class="tags"><span>карти</span><span>джерела</span><span>таймлайни</span></div>
+          </article>
+
+          <article class="pin butter reveal tilt" style="--d:.2s">
+            <p class="pin-hand">«Не зубримо, а розуміємо» — головне правило моїх уроків ✎</p>
+          </article>
+
+          <article class="pin lilac reveal tilt" style="--d:.3s">
+            <div class="emoji">🎯</div>
+            <h3>План під твою ціль</h3>
+            <p>На першому уроці визначимо твій рівень і складемо маршрут: що повторити, що підтягнути, що закріпити.</p>
+          </article>
+
+          <article class="pin reveal tilt" style="--d:.2s">
+            <div class="emoji" style="background:var(--blush)">📝</div>
+            <h3>Домашні з розбором</h3>
+            <p>Перевіряю кожне завдання й пояснюю помилки, щоб вони не повторювалися.</p>
+          </article>
+
+          <article class="pin blush reveal tilt" style="--d:.3s">
+            <div class="emoji">💬</div>
+            <h3>Спілкуємось на «ти»</h3>
+            <p>Без стресу й страху помилитися. Можна перепитувати скільки завгодно.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── SUBJECTS ───────── -->
+    <section id="subjects" style="padding-top:40px">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Предмети</span>
+          <h2>Чого <em>навчимося</em> разом</h2>
+        </div>
+
+        <div class="subjects">
+          <article class="subject lang reveal">
+            <span class="num">предмет №1</span>
+            <h3>Українська мова</h3>
+            <p>Від правопису до стилістики: системно, з прикладами й великою кількістю практики у форматі НМТ.</p>
+            <ul class="topics">
+              <li>Фонетика та орфоепія</li><li>Наголоси</li><li>Орфографія</li><li>Лексика</li><li>Фразеологія</li>
+              <li>Будова слова</li><li>Морфологія</li><li>Синтаксис</li><li>Пунктуація</li><li>Стилістика</li><li>Робота з текстом</li>
+            </ul>
+            <span class="big-letter" aria-hidden="true">Ї</span>
+          </article>
+
+          <article class="subject hist reveal" style="--d:.15s">
+            <span class="num">предмет №2</span>
+            <h3>Історія України</h3>
+            <p>Усі періоди від давнини до сьогодення, а ще робота з картами, історичними джерелами та персоналіями.</p>
+            <ul class="topics">
+              <li>Давня історія</li><li>Київська Русь</li><li>Галицько-Волинська держава</li><li>Литовсько-польська доба</li>
+              <li>Козацька доба</li><li>XIX століття</li><li>Українська революція</li><li>XX століття</li><li>Незалежна Україна</li><li>Карти та джерела</li>
+            </ul>
+            <span class="big-letter" aria-hidden="true">Є</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── STEPS ───────── -->
+    <section id="how" style="padding-top:40px">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Як усе відбувається</span>
+          <h2>Чотири кроки до <em>результату</em></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Заявка</h3><p>Залишаєш повідомлення в формі або пишеш мені в месенджер.</p></div>
+          <div class="step reveal" style="--d:.1s"><h3>Знайомство</h3><p>Визначаємо твій рівень, цілі та зручний розклад.</p></div>
+          <div class="step reveal" style="--d:.2s"><h3>Абонемент</h3><p>Обираєш пакет уроків, який підходить саме тобі.</p></div>
+          <div class="step reveal" style="--d:.3s"><h3>Результат</h3><p>Регулярні уроки, практика й впевненість на іспиті.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PRICING ───────── -->
+    <section id="prices" class="pricing">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Абонементи</span>
+          <h2>Обери свій <em>формат</em></h2>
+          <p>Що більший абонемент, то дешевший кожен урок. Уроки можна розподіляти між мовою та історією.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <div class="badge-row"><span class="emoji">🌱</span><span class="ribbon soft">Для старту</span></div>
+            <h3>Старт</h3>
+            <div class="lessons">8 уроків</div>
+            <div class="price"><b>2 700</b><span>₴</span></div>
+            <div class="per">≈ 338 ₴ за урок</div>
+            <ul>
+              <li>Діагностика рівня на першому уроці</li>
+              <li>Індивідуальний план навчання</li>
+              <li>Домашні завдання з перевіркою</li>
+              <li>Ідеально, щоб спробувати й підтягнути теми</li>
+            </ul>
+            <a class="btn btn-light" href="#contact" data-plan="Старт — 8 уроків">Обрати «Старт» <span class="arrow">→</span></a>
+          </article>
+
+          <article class="plan popular reveal" style="--d:.12s">
+            <div class="badge-row"><span class="emoji">🔥</span><span class="ribbon">Найпопулярніший</span></div>
+            <h3>Оптимальний</h3>
+            <div class="lessons">16 уроків</div>
+            <div class="price"><b>5 100</b><span>₴</span></div>
+            <div class="per">≈ 319 ₴ за урок</div>
+            <span class="save">Економія 300 ₴</span>
+            <ul>
+              <li>Усе з абонемента «Старт»</li>
+              <li>Системне повторення великих тем</li>
+              <li>Тренувальні тести у форматі НМТ</li>
+              <li>Підтримка в месенджері між уроками</li>
+            </ul>
+            <a class="btn" href="#contact" data-plan="Оптимальний — 16 уроків">Обрати «Оптимальний» <span class="arrow">→</span></a>
+          </article>
+
+          <article class="plan reveal" style="--d:.24s">
+            <div class="badge-row"><span class="emoji">🏆</span><span class="ribbon soft">Найвигідніший</span></div>
+            <h3>НМТ-максимум</h3>
+            <div class="lessons">34 уроки</div>
+            <div class="price"><b>10 200</b><span>₴</span></div>
+            <div class="per">300 ₴ за урок</div>
+            <span class="save">Економія 1 275 ₴</span>
+            <ul>
+              <li>Усе з абонемента «Оптимальний»</li>
+              <li>Повний курс підготовки до НМТ</li>
+              <li>Регулярні пробні НМТ з детальним розбором</li>
+              <li>Стратегія й лайфхаки для дня іспиту</li>
+            </ul>
+            <a class="btn btn-light" href="#contact" data-plan="НМТ-максимум — 34 уроки">Обрати «НМТ-максимум» <span class="arrow">→</span></a>
+          </article>
+        </div>
+
+        <p class="pricing-note reveal">Не знаєш, що обрати? <a class="tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Напиши мені, разом вирішимо ♡</a></p>
+      </div>
+    </section>
+
+    <!-- ───────── FAQ ───────── -->
+    <section id="faq">
+      <div class="wrap faq-grid">
+        <div class="section-head reveal">
+          <span class="eyebrow">Питання</span>
+          <h2>Часті <em>запитання</em></h2>
+          <p>Не знайшов відповіді? Просто напиши мені, я з радістю все поясню.</p>
+        </div>
+        <div>
+          <details class="reveal" open>
+            <summary>Як проходять уроки? <span class="pm"></span></summary>
+            <div class="answer">Онлайн через Zoom або Google Meet. Потрібні лише ноутбук чи планшет, навушники й стабільний інтернет. Усі матеріали надсилаю після уроку.</div>
+          </details>
+          <details class="reveal" style="--d:.05s">
+            <summary>Можна поєднувати мову та історію в одному абонементі? <span class="pm"></span></summary>
+            <div class="answer">Так! Уроки абонемента можна розподіляти між обома предметами так, як тобі потрібно.</div>
+          </details>
+          <details class="reveal" style="--d:.1s">
+            <summary>Кому підходять заняття? <span class="pm"></span></summary>
+            <div class="answer">Школярам, які готуються до НМТ, а також усім, хто хоче покращити грамотність або краще знати історію України.</div>
+          </details>
+          <details class="reveal" style="--d:.15s">
+            <summary>Коли краще починати підготовку до НМТ? <span class="pm"></span></summary>
+            <div class="answer">Чим раніше, тим спокійніше. Для повної підготовки найкраще підходить абонемент «НМТ-максимум» на 34 уроки, але й за 8–16 уроків можна суттєво підтягнути слабкі теми.</div>
+          </details>
+          <details class="reveal" style="--d:.2s">
+            <summary>Як оплатити абонемент? <span class="pm"></span></summary>
+            <div class="answer">Після знайомства я надішлю реквізити для оплати. Абонемент оплачується наперед, а розклад уроків ми узгоджуємо разом.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── CONTACT ───────── -->
+    <section id="contact" style="padding-top:20px">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <div class="contact-side">
+            <span class="ring r1"></span><span class="ring r2"></span>
+            <h2>Запишись на навчання</h2>
+            <p>Залиш заявку, і я напишу тобі, щоб познайомитися та підібрати зручний розклад.</p>
+            <span class="hand">до зустрічі на уроці! ✿</span>
+            <div class="socials">
+              <a id="tgLink" class="tg-link" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">✈️ @a_sonchikk</a>
+              <a id="igLink" href="https://www.instagram.com/a.sonichka/" target="_blank" rel="noopener">📸 @a.sonichka</a>
+            </div>
+          </div>
+
+          <form id="form" novalidate>
+            <div class="form-row">
+              <label>Твоє імʼя
+                <input type="text" name="name" required placeholder="Наприклад, Олена" autocomplete="given-name">
+              </label>
+              <label>Telegram або телефон
+                <input type="text" name="contact" required placeholder="@username або +380…">
+              </label>
+            </div>
+            <div>
+              <span style="display:block;font-size:14px;font-weight:700;margin-bottom:8px">Предмет</span>
+              <div class="subj-pick">
+                <label><input type="checkbox" name="subject" value="Українська мова" checked><span>Українська мова</span></label>
+                <label><input type="checkbox" name="subject" value="Історія України"><span>Історія України</span></label>
+              </div>
+            </div>
+            <label>Абонемент
+              <select name="plan" id="planSelect">
+                <option>Ще не визначився(-лася)</option>
+                <option>Старт — 8 уроків</option>
+                <option>Оптимальний — 16 уроків</option>
+                <option>НМТ-максимум — 34 уроки</option>
+              </select>
+            </label>
+            <label>Коментар
+              <textarea name="msg" placeholder="Клас, мета, зручний час для уроків…"></textarea>
+            </label>
+            <button class="btn btn-accent" type="submit">Надіслати заявку <span class="arrow">→</span></button>
+            <p class="form-note">Після натискання відкриється Telegram з уже готовим повідомленням, залишиться тільки надіслати його.</p>
+
+            <div class="success" id="success" aria-live="polite">
+              <div>
+                <span class="heart">💛</span>
+                <h3>Майже готово!</h3>
+                <p id="successNote">Залишився один крок: натисни кнопку, і в Telegram відкриється чат зі мною з уже вставленою заявкою. Тобі лише натиснути «Надіслати».</p>
+                <pre class="req-text" id="reqText"></pre>
+                <a class="btn btn-accent tg-link" id="tgSend" href="https://t.me/a_sonchikk" target="_blank" rel="noopener">Відкрити Telegram <span class="arrow">↗</span></a>
+                <p class="form-note" id="copyNote">Якщо текст не вставився сам, він уже скопійований: просто встав його в чат.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <a class="logo" href="#top">Софія <span>Буток</span></a>
+      <span>Українська мова · Історія України · Підготовка до НМТ</span>
+      <span>© <span id="year">2026</span></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    /* ── Налаштування контактів: встав свої посилання ── */
+    const CONFIG = {
+      telegram: "a_sonchikk",   // нік у Telegram (без @)
+      instagram: "a.sonichka",  // нік в Instagram (без @)
+    };
+
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    $("#year").textContent = new Date().getFullYear();
+
+    // toast
+    let toastTimer;
+    function toast(msg) {
+      const t = $("#toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove("show"), 3200);
+    }
+
+    // socials
+    const socials = { tgLink: CONFIG.telegram && `https://t.me/${CONFIG.telegram}`, igLink: CONFIG.instagram && `https://www.instagram.com/${CONFIG.instagram}/` };
+    Object.entries(socials).forEach(([id, url]) => {
+      const a = document.getElementById(id);
+      if (url) a.href = url;
+      else a.addEventListener("click", e => { e.preventDefault(); toast("Посилання скоро зʼявиться, а поки залиш заявку у формі ✿"); });
+    });
+
+    // mobile nav
+    const nav = $("#nav"), burger = $("#burger");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    $$(".nav-links a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+    // бігучий рядок: нахил під кут смуги + рух без растрового розмиття
+    (() => {
+      const band = $(".marquee"), tilt = $(".marquee-tilt"), track = $(".marquee-track");
+      const SECONDS = reduce ? 70 : 38; // час одного повного кола
+      let half = 0, x = 0, last = null, visible = true;
+      const fit = () => {
+        const slant = Math.min(44, Math.max(14, innerWidth * 0.024)); // те саме, що --slant у CSS
+        tilt.style.transform = `rotate(${-Math.atan2(slant, band.clientWidth)}rad)`;
+        half = track.scrollWidth / 2;
+      };
+      fit();
+      addEventListener("resize", fit);
+      if (document.fonts) document.fonts.ready.then(fit);
+      new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = null; }).observe(band);
+      const tick = t => {
+        if (visible && half) {
+          if (last !== null) {
+            x -= (half / SECONDS) * Math.min(t - last, 100) / 1000;
+            if (x <= -half) x += half;
+            track.style.marginLeft = x.toFixed(2) + "px";
+          }
+          last = t;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    })();
+
+    // count up
+    function countUp(el) {
+      if (el.dataset.done) return;
+      el.dataset.done = 1;
+      el.textContent = 0;
+      const target = +el.dataset.count, dur = 1800, start = performance.now();
+      const step = now => {
+        const p = dur ? Math.min((now - start) / dur, 1) : 1;
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4)));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    // reveal on scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        if (e.target.id === "scorePin") { e.target.classList.add("counted"); countUp($("[data-count]", e.target)); }
+        io.unobserve(e.target);
+      });
+    }, { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+    $$(".reveal").forEach(el => io.observe(el));
+    setTimeout(() => $$(".hero-facts [data-count]").forEach(countUp), 900);
+
+    // 3D tilt on cards
+    if (!reduce && matchMedia("(hover: hover)").matches) {
+      $$(".tilt").forEach(card => {
+        card.addEventListener("pointermove", e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          card.style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 10}deg) translateY(-6px)`;
+        });
+        card.addEventListener("pointerleave", () => card.style.transform = "");
+      });
+
+      // parallax collage
+      const collage = $("#collage");
+      const layers = $$("[data-depth]", collage);
+      window.addEventListener("pointermove", e => {
+        const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+        layers.forEach(l => {
+          const d = +l.dataset.depth;
+          l.style.translate = `${-x * d}px ${-y * d}px`;
+        });
+      });
+    }
+
+    // plan buttons → preselect in form
+    $$("[data-plan]").forEach(b => b.addEventListener("click", () => {
+      $("#planSelect").value = b.dataset.plan;
+      toast(`Обрано: ${b.dataset.plan} ✓`);
+    }));
+
+    // form
+    $("#form").addEventListener("submit", e => {
+      e.preventDefault();
+      const f = e.target, el = f.elements;
+      const name = el["name"].value.trim(), contact = el["contact"].value.trim();
+      if (!name || !contact) {
+        (name ? el["contact"] : el["name"]).focus();
+        toast("Будь ласка, вкажи імʼя та контакт для звʼязку");
+        return;
+      }
+      const subjects = $$("input[name=subject]:checked", f).map(i => i.value).join(", ") || "—";
+      const text = `Привіт, Софіє! Хочу записатися на уроки 🙂\nІмʼя: ${name}\nКонтакт: ${contact}\nПредмет: ${subjects}\nАбонемент: ${el["plan"].value}\nКоментар: ${el["msg"].value.trim() || "—"}`;
+      $("#reqText").textContent = text;
+      $("#success").classList.add("show");
+      // t.me/<нік>?text=… відкриває чат і сам вставляє текст у поле повідомлення
+      $("#tgSend").href = `https://t.me/${CONFIG.telegram}?text=${encodeURIComponent(text)}`;
+      // запасний варіант для старих версій Telegram: текст ще й копіюється
+      const copyNote = $("#copyNote");
+      const copied = navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject();
+      copied.catch(() => { copyNote.textContent = "Якщо текст не вставився сам, скопіюй його вище й встав у чат."; });
+      f.reset();
+    });
+  </script>
+</body>
+</html>
